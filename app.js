@@ -18,8 +18,8 @@ const birdsArray = ['https://source.unsplash.com/edrW8VIlJJg/500x500',
 'https://source.unsplash.com/xWQcud4Xtr4/500x500',
 'https://source.unsplash.com/OjhSUsHUIYM/500x500'];
 
-const numOfSteps = animalsArray.length + birdsArray.length;
-let currentStep = 0;
+//const numOfSteps = animalsArray.length + birdsArray.length;
+//let currentStep = 0;
 
 const startBtn = document.querySelector('#start');
 
@@ -32,7 +32,8 @@ const dropZones = document.querySelectorAll('.drop-place');
 //console.log(dropZones.length)
 
 
-startBtn.addEventListener('click', event => {
+startBtn.addEventListener('click', (event) => {
+    event.preventDefault();
     document.querySelectorAll('.screen')[0].classList.add('up');
 });
 
@@ -61,7 +62,7 @@ function dragEnd(event){
 
 function dragStart(event){
     setTimeout(() => event.target.classList.add('hide'), 0);
-    console.log(event.target);
+    //console.log(event.target);
     draggedItem = event.target;
 }
 
@@ -111,9 +112,9 @@ function dropItem(event){
     }
 
     event.target.classList.remove('drop-place--choosen');
-            currentStep++;
+            //currentStep++;
             if(allDropPlace.childElementCount == 0){
-                alert('You WIN!!');
+                setTimeout(()=>alert('You WIN!!'), 1000);
             }
 }
 
