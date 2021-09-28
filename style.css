@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    font-family: 'Khula', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+  }
+  
+
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    transition: margin 0.5s ease-out;
+    background: linear-gradient(90deg, #29323C 0%, #485563 100%);
+  }
+
+/* .container{
+    margin: 10px 0px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+
+.birds-and-animals{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+    
+
+}
+
+
+
+.animals{
+    min-height: 40vh;
+    width: 50%;
+    border: 2px solid red;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: wheat;
+   
+}
+
+.birds{
+    min-height: 40vh;
+    width: 50%;
+    border: 2px solid red;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: wheat;
+
+}
+
+.all{
+    min-height: 40vh;
+    width: 90vw;
+    border: 2px solid red;
+    margin: 10px;
+    border-radius: 10px;
+    background-color:thistle;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.drop-place{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    position: relative;
+}
+
+
+.text{
+    display: inline-block;
+    margin: 13px;
+    color: grey;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    /* left: 0; */
+    /* bottom: 0; */
+}
+
+.item{
+    width: 100px;
+    height: auto;
+    cursor: grab;
+    z-index: 12;
+    margin:5px;
+}
+
+.item:active{
+    cursor:grabbing;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.hide{
+    display: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .screen.up {
+    margin-top: -100vh;
+  }
