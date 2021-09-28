@@ -1,9 +1,9 @@
 /* Что еще реализовать:
-!добавить проект на гитхаб
-1) подсветку дроп-зон
+!добавить проект на гитхаб - done
+1) подсветку дроп-зон - done
 2) добавить большой перечень животных и птиц и выбирать их рандомно из файла json
 3) довабить всплывающие окна при неправильном шаге
-4) добавить кнопку "начать сначала"
+4) добавить кнопку "начать сначала" 
 */
 
 //массивы птиц и млекопитающих
@@ -17,6 +17,9 @@ const birdsArray = ['https://source.unsplash.com/edrW8VIlJJg/500x500',
 'https://source.unsplash.com/wTPp323zAEw/500x500',
 'https://source.unsplash.com/xWQcud4Xtr4/500x500',
 'https://source.unsplash.com/OjhSUsHUIYM/500x500'];
+
+const numOfSteps = animalsArray.length + birdsArray.length;
+let currentStep = 0;
 
 const startBtn = document.querySelector('#start');
 
@@ -63,10 +66,13 @@ function dragStart(event){
 }
 
 function dragEnter(event){
-
+    if(event.target.classList.contains('birds') || event.target.classList.contains('animals')){
+        event.target.classList.add('drop-place--choosen');
+    }
 }
 
 function dragLeave(event){
+    event.target.classList.remove('drop-place--choosen');
 
 }
 
@@ -86,6 +92,7 @@ function dropItem(event){
                     event.target.append(draggedItem);
                 }
             }
+            
         break;
         case('bird'):
             if(event.target.classList.contains('birds') || event.target.parentElement.parentElement.classList.contains('birds')){
@@ -96,14 +103,18 @@ function dropItem(event){
                     event.target.append(draggedItem);
                 }
             }
-
+            
         break;
         default:
             console.log('default part');
             break;
     }
 
-
+    event.target.classList.remove('drop-place--choosen');
+            currentStep++;
+            if(allDropPlace.childElementCount == 0){
+                alert('You WIN!!');
+            }
 }
 
 

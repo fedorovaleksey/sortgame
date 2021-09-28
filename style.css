@@ -51,7 +51,7 @@ body {
 .animals{
     min-height: 40vh;
     width: 50%;
-    border: 2px solid red;
+    border: 2px solid black;
     margin: 0 10px;
     border-radius: 10px;
     background-color: wheat;
@@ -61,7 +61,7 @@ body {
 .birds{
     min-height: 40vh;
     width: 50%;
-    border: 2px solid red;
+    border: 2px solid black;
     margin: 0 10px;
     border-radius: 10px;
     background-color: wheat;
@@ -71,7 +71,7 @@ body {
 .all{
     min-height: 40vh;
     width: 90vw;
-    border: 2px solid red;
+    border: 2px solid black;
     margin: 10px;
     border-radius: 10px;
     background-color:thistle;
@@ -87,6 +87,11 @@ body {
     align-items: center;
     padding: 0 5px;
     position: relative;
+}
+
+.drop-place--choosen{
+    border: 2px solid red;
+    box-shadow: 5px 5px 2px 1px rgba(63, 38, 38, 0.2), -5px -5px 2px 1px rgba(228, 7, 7, 0.2);
 }
 
 
